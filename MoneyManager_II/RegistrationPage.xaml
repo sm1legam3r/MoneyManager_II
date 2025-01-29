@@ -23,11 +23,10 @@
                      Name="SurnameTextBox"
                      Text="Введите фамилию"/>
             <TextBox Style="{StaticResource TextBoxStyle}"
-                     Name="LoginTextBox"
+                     Name="RegLoginTextBox"
                      Text="Введите логин"/>
             <PasswordBox Style="{StaticResource TextBoxStyle}"
-                         Name="PasswordBox"
-                         />
+                         Name="RegPasswordBox"/>
             <Button Style="{StaticResource ButtonStyle}"
                     Content="Зарегистрироваться"
                     Click="Registrate_Button_Click"/>
