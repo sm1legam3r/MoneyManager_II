@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -32,6 +33,11 @@ namespace MoneyManager_II
             //this.Close();
         }
 
+        private bool Authorize()
+        {
+
+            return true;
+        }
         private void RegistrateTextClick(object sender, MouseButtonEventArgs e)
         {
             NavigationService.Navigate(new RegistrationPage());
