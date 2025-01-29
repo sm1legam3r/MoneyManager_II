@@ -12,8 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using LiveCharts.Wpf;
-using LiveCharts;
 
 namespace MoneyManager_II
 {
@@ -25,33 +23,6 @@ namespace MoneyManager_II
         public IncomePage()
         {
             InitializeComponent();
-
-            pieChart.Series = new SeriesCollection()
-            {
-                new PieSeries
-                {
-                    Values = new ChartValues<double> {20},
-                    DataLabels = true,
-                    Fill = new SolidColorBrush(Colors.Red),
-                    LabelPoint = chartPoint => $"{chartPoint.Y} ({chartPoint.Participation:P})"
-                },
-                new PieSeries
-                {
-                    Values = new ChartValues<double> {40},
-                    DataLabels = true,
-                    Fill = new SolidColorBrush(Colors.Green),
-                    LabelPoint = chartPoint => $"{chartPoint.Y} ({chartPoint.Participation:P})"
-                },
-                new PieSeries
-                {
-                    Values = new ChartValues<double> {30},
-                    DataLabels = true,
-                    Fill = new SolidColorBrush(Colors.Blue),
-                    LabelPoint = chartPoint => $"{chartPoint.Y} ({chartPoint.Participation:P})"
-                }
-            };
-
-            pieChart.LegendLocation = LegendLocation.Right;
         }
     }
 }
