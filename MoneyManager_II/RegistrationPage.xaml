@@ -17,14 +17,11 @@
                        FontSize="24px"
                        Foreground="{StaticResource TextColor}"/>
             <TextBox Style="{StaticResource TextBoxStyle}"
-                     Name="NameTextBox"
-                     Text="Введите имя"/>
+                     Name="NameTextBox"/>
             <TextBox Style="{StaticResource TextBoxStyle}"
-                     Name="SurnameTextBox"
-                     Text="Введите фамилию"/>
+                     Name="SurnameTextBox"/>
             <TextBox Style="{StaticResource TextBoxStyle}"
-                     Name="RegLoginTextBox"
-                     Text="Введите логин"/>
+                     Name="RegLoginTextBox"/>
             <PasswordBox Style="{StaticResource TextBoxStyle}"
                          Name="RegPasswordBox"/>
             <Button Style="{StaticResource ButtonStyle}"
