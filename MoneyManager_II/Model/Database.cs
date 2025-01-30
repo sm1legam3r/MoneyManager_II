@@ -10,7 +10,7 @@ namespace MoneyManager_II.Model
     public class Database
     {
         private SqlConnection sqlConnection = new SqlConnection(
-            "@Data Source=510EC12\\MMSQLSERVER; Initial Catalog=MoneyManagerDB; Integrated Security=True");
+            "Data Source=510EC12\\MMSQLSERVER; Initial Catalog=MoneyManagerDB; Integrated Security=True");
 
         public void OpenConnection()
         {

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MoneyManager_II.Model;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +23,7 @@ namespace MoneyManager_II
     /// </summary>
     public partial class RegistrationPage : Page
     {
-        private bool registrationSuccess = false;
-
+        Database database = new Database();
         public RegistrationPage()
         {
             InitializeComponent();
@@ -31,12 +33,12 @@ namespace MoneyManager_II
         {
             if (RegistrateSuccess())
             {
-                MessageBox.Show("Вы успешно зарегистрировались! \(@^0^@)/");
+                MessageBox.Show("Вы успешно зарегистрировались!");
                 NavigationService.GoBack();
             }
             else
             {
-                MessageBox.Show("Зарегистрироваться не получилось! ¯\_(ツ)_/¯")
+                MessageBox.Show("Зарегистрироваться не получилось!");
             }
         }
 
@@ -57,13 +59,32 @@ namespace MoneyManager_II
 
         private bool insertUser(string name, string surname, string login, string password)
         {
+            string query = $"INSERT INTO Users(Name, Surname, Login, Password) VALUES ('{name}', '{surname}', '{login}', '{password}')";
 
+            try
+            {
+                SqlCommand command = new SqlCommand(query, database.getConnection());
+                database.OpenConnection();
+                if(command.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
 
         private bool CheckDataRegistration()
         {
             bool emptyFields = SurnameTextBox.Text.Equals("") || NameTextBox.Text.Equals("") ||
-                               LoginTextBox.Text.Equals("") || PasswordBox.Password.Equals("");
+                               RegLoginTextBox.Text.Equals("") || RegPasswordBox.Password.Equals("");
             return !emptyFields;
         }
 

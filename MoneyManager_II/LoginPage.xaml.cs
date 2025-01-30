@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoneyManager_II.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -23,61 +24,69 @@ namespace MoneyManager_II
     /// </summary>
     public partial class LoginPage : Page
     {
+        Window loginWindow;
+        Database database = new Database();
         public LoginPage()
         {
             InitializeComponent();
+            this.loginWindow = new Window();
         }
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            ManagerWindow managerWindow = new ManagerWindow();
-            managerWindow.Show();
-            //this.Close();
+            if(Authorize())
+            {
+                ManagerWindow managerWindow = new ManagerWindow();
+                managerWindow.Show();
+                loginWindow.Close();
+            }
+            else
+            {
+                MessageBox.Show("Неправильный логин или пароль!");
+            }
         }
 
         private bool Authorize()
         {
             var login = LoginTextBox.Text;
             var password = PasswordTextBox.Password;
-            if(login.Equals("") || password.Equals(""))
+            if (login.Equals("") || password.Equals(""))
             {
                 MessageBox.Show("Не все поля заполнены для авторизации.");
             }
-            else if(CheckData(login, password))
+            else if (CheckData(login, password))
             {
-                return true
+                return true;
             }
             return false;
+        }
+        private bool CheckData(string login, string password)
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
+            string query = $"SELECT UserID, Name, Surname FROM Users WHERE Login = '{login}' AND Password = '{password}'";
 
-            private bool CheckData(string login, string password)
+            try
             {
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                DataTable table = new DataTable();
-                string query = $"SELECT user_id, name, surname FROM users where login = '{login}' AND password = '{password}'";
+                SqlCommand command = new SqlCommand(query, database.getConnection());
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
 
-                try
+                if (table.Rows.Count == 1)
                 {
-                    SqlCommand command = new SqlCommand(query, database.GetConnection());
-                    adapter.SelectCommand = command;
-                    adapter.Fill(table);
-
-                    if(table.Rows.Count == 1)
-                    {
-                        MessageBox.Show($"Добро пожаловать, {table.Rows[0].Field<string>("name")}");
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+                    MessageBox.Show($"Добро пожаловать, {table.Rows[0].Field<string>("Name")}");
+                    return true;
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
                     return false;
                 }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
         }
         private void RegistrateTextClick(object sender, MouseButtonEventArgs e)
         {
