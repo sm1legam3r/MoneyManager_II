@@ -24,11 +24,11 @@
                        FontSize="72px"
                        Foreground="{StaticResource TextColor}"
                        Margin="30px 0 0 0"/>
-            <TextBlock Text="Вася Пупков"
+            <TextBlock Name="NameTextBlock"
                        FontSize="72px"
                        Foreground="{StaticResource TextColor}"
                        Margin="30px 0 0 0"/>
-            <TextBlock Text="ID: 1337"
+            <TextBlock Name = "IdTextBlock"
                        FontSize="38px"
                        Foreground="{StaticResource TextColor}"
                        Margin="30px 0 0 0"/>
