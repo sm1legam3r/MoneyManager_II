@@ -29,16 +29,35 @@ namespace MoneyManager_II
 
         private void Registrate_Button_Click(object sender, RoutedEventArgs e)
         {
-            registrationSuccess = CheckDataRegistration();
-            if (registrationSuccess)
+            if (RegistrateSuccess())
             {
-                MessageBox.Show("Вы успешно зарегистрировались!😀");
+                MessageBox.Show("Вы успешно зарегистрировались! \(@^0^@)/");
                 NavigationService.GoBack();
             }
             else
             {
-                MessageBox.Show("Регистраиця провалена!😢");
+                MessageBox.Show("Зарегистрироваться не получилось! ¯\_(ツ)_/¯")
             }
+        }
+
+        private bool RegistrateSuccess()
+        {
+            var name = NameTextBox.Text;
+            var surname = SurnameTextBox.Text;
+            var login = RegLoginTextBox.Text;
+            var password = RegPasswordBox.Password;
+
+            if(insertUser(name, surname, login, password))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool insertUser(string name, string surname, string login, string password)
+        {
+
         }
 
         private bool CheckDataRegistration()
