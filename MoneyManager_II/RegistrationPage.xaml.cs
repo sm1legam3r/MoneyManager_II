@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -48,6 +49,17 @@ namespace MoneyManager_II
             var surname = SurnameTextBox.Text;
             var login = RegLoginTextBox.Text;
             var password = RegPasswordBox.Password;
+            using (SHA256 hash = SHA256.Create())
+            {
+                byte[] bytes = hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+                var builder = new StringBuilder();
+
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                password = builder.ToString();
+            }
 
             if(insertUser(name, surname, login, password))
             {
