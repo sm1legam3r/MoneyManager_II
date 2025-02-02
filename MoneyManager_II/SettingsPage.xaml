@@ -21,14 +21,15 @@
         <StackPanel Grid.Row="1"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            <Button Content="Включить тёмную тему"
+            <Button Name="ColorChangeButton"
+                    Content="Включить тёмную тему"
                     FontSize="24px"
                     FontWeight="Bold"
                     Foreground="{StaticResource TextColor}"
                     Background="{StaticResource OneColor}"
                     Width="300px"
                     Height="60px"
-                    Margin="0 0 0 50px"/>
+                    Margin="0 0 0 50px" Click="Button_Click"/>
             <Button Content="Выйти"
                     FontSize="24px"
                     FontWeight="Bold"

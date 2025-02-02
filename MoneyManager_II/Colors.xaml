@@ -4,9 +4,4 @@
     <SolidColorBrush x:Key="OneColor" Color="#A6CDC6"/>
     <SolidColorBrush x:Key="TextColor" Color="#16404D"/>
     <SolidColorBrush x:Key="TwoColor" Color="#DDA853"/>
-
-    <SolidColorBrush x:Key="DarkPrimaryColor" Color="#7E7A6E"/>
-    <SolidColorBrush x:Key="DarkOneColor" Color="#536663"/>
-    <SolidColorBrush x:Key="DarkTextColor" Color="#216074"/>
-    <SolidColorBrush x:Key="DarkTwoColor" Color="#6E542A"/>
 </ResourceDictionary>
