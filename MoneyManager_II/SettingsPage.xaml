@@ -36,7 +36,7 @@
                     Foreground="{StaticResource TextColor}"
                     Background="{StaticResource OneColor}"
                     Width="300px"
-                    Height="60px"/>
+                    Height="60px" Click="Button_Click_1"/>
         </StackPanel>
     </Grid>
 </Page>

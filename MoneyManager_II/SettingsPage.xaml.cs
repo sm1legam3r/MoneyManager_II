@@ -20,6 +20,7 @@ namespace MoneyManager_II
     /// </summary>
     public partial class SettingsPage : Page
     {
+        ManagerWindow managerWindow;
         private bool isDarkTheme = false; // Переменная для отслеживания текущей темы
 
         public SettingsPage()
@@ -48,6 +49,13 @@ namespace MoneyManager_II
 
             isDarkTheme = !isDarkTheme; // Переключаем флаг
             ColorChangeButton.Content = "Включить светлую тему";
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            managerWindow.Close();
         }
     }
 }
