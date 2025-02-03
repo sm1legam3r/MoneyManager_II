@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoneyManager_II.Model;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -20,9 +21,12 @@ namespace MoneyManager_II
     /// </summary>
     public partial class ManagerWindow : Window
     {
-        public ManagerWindow()
+        User user;
+        public ManagerWindow(User user)
         {
             InitializeComponent();
+            this.user = user;
+
             ManagerFrame.Navigate(new HomePage());
         }
 
@@ -43,7 +47,7 @@ namespace MoneyManager_II
 
         private void AccountImageClick(object sender, MouseButtonEventArgs e)
         {
-            ManagerFrame.Navigate(new AccountPage());
+            ManagerFrame.Navigate(new AccountPage(user));
         }
 
         private void SettingsImageClick(object sender, MouseButtonEventArgs e)

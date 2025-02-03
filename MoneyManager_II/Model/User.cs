@@ -8,9 +8,9 @@ namespace MoneyManager_II.Model
 {
     public class User
     {
-        private int user_id { get; set; }
-        private string surname { get; set; }
-        private string name { get; set; }
+        private int user_id;
+        private string surname;
+        private string name;
 
         public User(int id, string name, string surname)
         {

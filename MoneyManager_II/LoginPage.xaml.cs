@@ -25,6 +25,8 @@ namespace MoneyManager_II
     public partial class LoginPage : Page
     {
         Window loginWindow;
+        User user;
+
         Database database = new Database();
         public LoginPage()
         {
@@ -36,7 +38,7 @@ namespace MoneyManager_II
         {
             if(Authorize())
             {
-                ManagerWindow managerWindow = new ManagerWindow();
+                ManagerWindow managerWindow = new ManagerWindow(user);
                 managerWindow.Show();
                 loginWindow.Close();
             }
@@ -87,6 +89,10 @@ namespace MoneyManager_II
 
                 if (table.Rows.Count == 1)
                 {
+                    var id = table.Rows[0].Field<int>("UserID");
+                    var name = table.Rows[0].Field<String>("Name");
+                    var surname = table.Rows[0].Field<String>("Surname");
+                    user = new User(id, name, surname);
                     MessageBox.Show($"Добро пожаловать, {table.Rows[0].Field<string>("Name")}");
                     return true;
                 }
