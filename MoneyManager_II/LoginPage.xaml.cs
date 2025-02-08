@@ -24,14 +24,15 @@ namespace MoneyManager_II
     /// </summary>
     public partial class LoginPage : Page
     {
-        Window loginWindow;
+        private Window loginWindow;
         User user;
 
         Database database = new Database();
-        public LoginPage()
+
+        public LoginPage(Window parentWindow)
         {
             InitializeComponent();
-            this.loginWindow = new Window();
+            this.loginWindow = parentWindow;
         }
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
@@ -40,7 +41,7 @@ namespace MoneyManager_II
             {
                 ManagerWindow managerWindow = new ManagerWindow(user);
                 managerWindow.Show();
-                loginWindow.Close();
+                loginWindow?.Close();
             }
             else
             {

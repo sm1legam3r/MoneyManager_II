@@ -23,7 +23,7 @@ namespace MoneyManager_II
         public LoginWindow()
         {
             InitializeComponent();
-            LoginFrame.Content = new LoginPage();
+            LoginFrame.Content = new LoginPage(this);
         }
     }
 }
