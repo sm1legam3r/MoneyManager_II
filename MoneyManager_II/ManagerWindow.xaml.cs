@@ -57,9 +57,9 @@ namespace MoneyManager_II
 
         public void Logout()
         {
-            LoginWindow loginWindow = new LoginWindow();  // Открыть окно входа
+            LoginWindow loginWindow = new LoginWindow();
             loginWindow.Show();
-            this.Close();  // Закрыть ManagerWindow
+            this.Close();
         }
     }
 }

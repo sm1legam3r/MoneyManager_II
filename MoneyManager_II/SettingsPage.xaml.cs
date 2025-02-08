@@ -21,8 +21,7 @@ namespace MoneyManager_II
     public partial class SettingsPage : Page
     {
         private ManagerWindow managerWindow;
-        private bool isDarkTheme = false; // Переменная для отслеживания текущей темы
-
+        private bool isDarkTheme = false;
         public SettingsPage(ManagerWindow manager)
         {
             InitializeComponent();
@@ -33,7 +32,6 @@ namespace MoneyManager_II
         {
             if (isDarkTheme)
             {
-                // Включаем светлую тему
                 Application.Current.Resources["PrimaryColor"] = new SolidColorBrush(Color.FromRgb(251, 245, 221)); // #FBF5DD
                 Application.Current.Resources["SecondaryColor"] = new SolidColorBrush(Color.FromRgb(221, 241, 52)); // #DDF134
                 Application.Current.Resources["OneColor"] = new SolidColorBrush(Color.FromRgb(166, 205, 198)); // #A6CDC6
@@ -44,7 +42,6 @@ namespace MoneyManager_II
             }
             else
             {
-                // Включаем тёмную тему
                 Application.Current.Resources["PrimaryColor"] = new SolidColorBrush(Color.FromRgb(126, 122, 110)); // #7E7A6E
                 Application.Current.Resources["SecondaryColor"] = new SolidColorBrush(Color.FromRgb(75, 83, 6)); // #4B5306
                 Application.Current.Resources["OneColor"] = new SolidColorBrush(Color.FromRgb(83, 102, 99)); // #536663
@@ -54,7 +51,7 @@ namespace MoneyManager_II
                 ColorChangeButton.Content = "Включить светлую тему";
             }
 
-            isDarkTheme = !isDarkTheme; // Переключаем флаг
+            isDarkTheme = !isDarkTheme;
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
