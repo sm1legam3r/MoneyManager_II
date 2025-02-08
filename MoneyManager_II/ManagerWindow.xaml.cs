@@ -52,7 +52,14 @@ namespace MoneyManager_II
 
         private void SettingsImageClick(object sender, MouseButtonEventArgs e)
         {
-            ManagerFrame.Navigate(new SettingsPage());
+            ManagerFrame.Navigate(new SettingsPage(this));
+        }
+
+        public void Logout()
+        {
+            LoginWindow loginWindow = new LoginWindow();  // Открыть окно входа
+            loginWindow.Show();
+            this.Close();  // Закрыть ManagerWindow
         }
     }
 }
