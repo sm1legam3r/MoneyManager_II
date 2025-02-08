@@ -24,7 +24,7 @@
         <TextBlock Text="Доходы"
                    FontSize="36px"
                    HorizontalAlignment="Center"
-                   Foreground="{StaticResource TextColor}"/>
+                   Foreground="{DynamicResource TextColor}"/>
         <vlc:PieChart Name="pieChart"
                       Grid.Row="1"
                       Height="600px"/>
@@ -33,23 +33,23 @@
                    Grid.Column="1"
                    FontSize="36px"
                    HorizontalAlignment="Center"
-                   Foreground="{StaticResource TextColor}"/>
+                   Foreground="{DynamicResource TextColor}"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1"
                     VerticalAlignment="Center">
             <Button Content="Выбрать период"
                     Width="300px"
                     Height="60px"
-                    Background="{StaticResource OneColor}"
-                    Foreground="{StaticResource TextColor}"
+                    Background="{DynamicResource OneColor}"
+                    Foreground="{DynamicResource TextColor}"
                     FontSize="24px"
                     FontWeight="Bold"
                     Cursor="Hand"/>
             <Button Content="Добавить доход"
                     Width="300px"
                     Height="60px"
-                    Background="{StaticResource OneColor}"
-                    Foreground="{StaticResource TextColor}"
+                    Background="{DynamicResource OneColor}"
+                    Foreground="{DynamicResource TextColor}"
                     FontSize="24px"
                     FontWeight="Bold"
                     Margin="0 30px 0 0"
@@ -57,8 +57,8 @@
             <Button Content="Новая категория"
                     Width="300px"
                     Height="60px"
-                    Background="{StaticResource OneColor}"
-                    Foreground="{StaticResource TextColor}"
+                    Background="{DynamicResource OneColor}"
+                    Foreground="{DynamicResource TextColor}"
                     FontSize="24px"
                     FontWeight="Bold"
                     Margin="0 30px 0 0"

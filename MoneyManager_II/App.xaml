@@ -10,8 +10,8 @@
                 <Setter Property="Button.Height" Value="40px"/>
                 <Setter Property="Button.FontSize" Value="18px"/>
                 <Setter Property="Button.Margin" Value="0 20px 0 0"/>
-                <Setter Property="Button.Background" Value="{StaticResource TwoColor}"/>
-                <Setter Property="Button.Foreground" Value="{StaticResource TextColor}"/>
+                <Setter Property="Button.Background" Value="{DynamicResource TwoColor}"/>
+                <Setter Property="Button.Foreground" Value="{DynamicResource TextColor}"/>
                 <Setter Property="Button.Cursor" Value="Hand"/>
             </Style>
 

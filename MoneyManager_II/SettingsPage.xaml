@@ -16,7 +16,7 @@
         <TextBlock Text="Настройки"
            FontSize="36px"
            HorizontalAlignment="Center"
-           Foreground="{StaticResource TextColor}"/>
+           Foreground="{DynamicResource TextColor}"/>
 
         <StackPanel Grid.Row="1"
                     VerticalAlignment="Center"
@@ -25,16 +25,16 @@
                     Content="Включить тёмную тему"
                     FontSize="24px"
                     FontWeight="Bold"
-                    Foreground="{StaticResource TextColor}"
-                    Background="{StaticResource OneColor}"
+                    Foreground="{DynamicResource TextColor}"
+                    Background="{DynamicResource OneColor}"
                     Width="300px"
                     Height="60px"
                     Margin="0 0 0 50px" Click="Button_Click"/>
             <Button Content="Выйти"
                     FontSize="24px"
                     FontWeight="Bold"
-                    Foreground="{StaticResource TextColor}"
-                    Background="{StaticResource OneColor}"
+                    Foreground="{DynamicResource TextColor}"
+                    Background="{DynamicResource OneColor}"
                     Width="300px"
                     Height="60px" Click="Button_Click_1"/>
         </StackPanel>
