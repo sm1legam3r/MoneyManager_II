@@ -29,14 +29,14 @@
                     Background="{DynamicResource OneColor}"
                     Width="300px"
                     Height="60px"
-                    Margin="0 0 0 50px" Click="Button_Click"/>
+                    Margin="0 0 0 50px" Click="ColorChange_Click"/>
             <Button Content="Выйти"
                     FontSize="24px"
                     FontWeight="Bold"
                     Foreground="{DynamicResource TextColor}"
                     Background="{DynamicResource OneColor}"
                     Width="300px"
-                    Height="60px" Click="Button_Click_1"/>
+                    Height="60px" Click="Logout_Click"/>
         </StackPanel>
     </Grid>
 </Page>
