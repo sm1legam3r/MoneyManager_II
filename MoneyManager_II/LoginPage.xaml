@@ -15,14 +15,14 @@
             <TextBlock Text="Авторизация"
                        HorizontalAlignment="Center"
                        FontSize="24px"
-                       Foreground="{StaticResource TextColor}"/>
+                       Foreground="{DynamicResource TextColor}"/>
             <TextBox Name="LoginTextBox" Style="{StaticResource TextBoxStyle}"/>
             <PasswordBox Name="PasswordTextBox" Style="{StaticResource TextBoxStyle}"/>
             <Button Style="{StaticResource ButtonStyle}"
                     Content="Войти"
                     Click="Login_Button_Click"/>
             <TextBlock Text="Зарегистрироваться"
-                       Foreground="{StaticResource TextColor}"
+                       Foreground="{DynamicResource TextColor}"
                        HorizontalAlignment="Center"
                        Margin="0 10px 0 0"
                        Cursor="Hand"

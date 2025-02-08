@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ManagerWindow" Height="450" Width="800"
         WindowState="Maximized"
-        Background="{StaticResource PrimaryColor}"
+        Background="{DynamicResource PrimaryColor}"
         FontFamily="Consolas">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -15,9 +15,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0"
-                    Background="{StaticResource OneColor}">
+                    Background="{DynamicResource OneColor}">
             <TextBlock Text="Меню"
-                       Foreground="{StaticResource TextColor}"
+                       Foreground="{DynamicResource TextColor}"
                        FontSize="24px"
                        HorizontalAlignment="Center"
                        Margin="0 10px 0 0"/>

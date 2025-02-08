@@ -34,21 +34,26 @@ namespace MoneyManager_II
             {
                 // Включаем светлую тему
                 Application.Current.Resources["PrimaryColor"] = new SolidColorBrush(Color.FromRgb(251, 245, 221)); // #FBF5DD
+                Application.Current.Resources["SecondaryColor"] = new SolidColorBrush(Color.FromRgb(221, 241, 52)); // #DDF134
                 Application.Current.Resources["OneColor"] = new SolidColorBrush(Color.FromRgb(166, 205, 198)); // #A6CDC6
                 Application.Current.Resources["TextColor"] = new SolidColorBrush(Color.FromRgb(22, 64, 77)); // #16404D
                 Application.Current.Resources["TwoColor"] = new SolidColorBrush(Color.FromRgb(221, 168, 83)); // #DDA853
+
+                ColorChangeButton.Content = "Включить тёмную тему";
             }
             else
             {
                 // Включаем тёмную тему
                 Application.Current.Resources["PrimaryColor"] = new SolidColorBrush(Color.FromRgb(126, 122, 110)); // #7E7A6E
+                Application.Current.Resources["SecondaryColor"] = new SolidColorBrush(Color.FromRgb(75, 83, 6)); // #4B5306
                 Application.Current.Resources["OneColor"] = new SolidColorBrush(Color.FromRgb(83, 102, 99)); // #536663
-                Application.Current.Resources["TextColor"] = new SolidColorBrush(Color.FromRgb(33, 96, 116)); // #216074
+                Application.Current.Resources["TextColor"] = new SolidColorBrush(Color.FromRgb(185, 197, 201)); // #B9C5C9
                 Application.Current.Resources["TwoColor"] = new SolidColorBrush(Color.FromRgb(110, 84, 42)); // #6E542A
+
+                ColorChangeButton.Content = "Включить светлую тему";
             }
 
             isDarkTheme = !isDarkTheme; // Переключаем флаг
-            ColorChangeButton.Content = "Включить светлую тему";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
