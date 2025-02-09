@@ -17,42 +17,44 @@
         <TextBlock Text="Аккаунт"
            FontSize="72px"
            HorizontalAlignment="Center"
-           Foreground="{StaticResource TextColor}"/>
+           Foreground="{DynamicResource TextColor}"/>
 
         <StackPanel Grid.Row="1">
             <TextBlock Text="Информация об аккаунте:"
                        FontSize="72px"
-                       Foreground="{StaticResource TextColor}"
+                       Foreground="{DynamicResource TextColor}"
                        Margin="30px 0 0 50px"/>
             <TextBlock Name="NameTextBlock"
                        FontSize="72px"
-                       Foreground="{StaticResource TextColor}"
+                       Foreground="{DynamicResource TextColor}"
                        Margin="30px 0 0 0"/>
             <TextBlock Name = "IdTextBlock"
                        FontSize="38px"
-                       Foreground="{StaticResource TextColor}"
+                       Foreground="{DynamicResource TextColor}"
                        Margin="30px 0 0 0"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2"
                     Orientation="Horizontal"
                     HorizontalAlignment="Right">
-            <Button Grid.Row="2"
+            <Button Name="ChangeAccountDataButton"
+                    Grid.Row="2"
                     Content="Изменить данные аккаунта"
                     Width="400px"
                     Height="60px"
                     FontSize="24px"
-                    Background="{StaticResource TwoColor}"
-                    Foreground="{StaticResource TextColor}"
+                    Background="{DynamicResource TwoColor}"
+                    Foreground="{DynamicResource TextColor}"
                     FontWeight="Bold"
                     Margin="0 0 30px 0"/>
-            <Button Grid.Row="2"
+            <Button Name="DeleteAccountButton"
+                    Grid.Row="2"
                     Content="Удалить аккаунт"
                     Width="400px"
                     Height="60px"
                     FontSize="24px"
-                    Background="{StaticResource OneColor}"
-                    Foreground="{StaticResource TextColor}"
+                    Background="{DynamicResource OneColor}"
+                    Foreground="{DynamicResource TextColor}"
                     FontWeight="Bold"
                     Margin="0 0 30px 0"/>
         </StackPanel>

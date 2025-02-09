@@ -47,7 +47,8 @@
                     HorizontalAlignment="Center"
                     Orientation="Horizontal">
 
-            <Button Content="Создать счёт"
+            <Button Name="CreateStatementButton"
+                    Content="Создать счёт"
                     Width="300px"
                     Height="60px"
                     Background="{DynamicResource TwoColor}"

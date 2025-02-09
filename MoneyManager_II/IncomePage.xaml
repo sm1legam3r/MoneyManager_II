@@ -37,7 +37,8 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1"
                     VerticalAlignment="Center">
-            <Button Content="Выбрать период"
+            <Button Name="SelectPeriodIncomeButton"
+                    Content="Выбрать период"
                     Width="300px"
                     Height="60px"
                     Background="{DynamicResource OneColor}"
@@ -45,7 +46,8 @@
                     FontSize="24px"
                     FontWeight="Bold"
                     Cursor="Hand"/>
-            <Button Content="Добавить доход"
+            <Button Name="AddIncomeButton"
+                    Content="Добавить доход"
                     Width="300px"
                     Height="60px"
                     Background="{DynamicResource OneColor}"
@@ -54,7 +56,8 @@
                     FontWeight="Bold"
                     Margin="0 30px 0 0"
                     Cursor="Hand"/>
-            <Button Content="Новая категория"
+            <Button Name="NewCategoryIncomeButton"
+                    Content="Новая категория"
                     Width="300px"
                     Height="60px"
                     Background="{DynamicResource OneColor}"
